@@ -123,7 +123,7 @@ echo ".claro.com.br/
 echo "acl url1 dstdomain -i 127.0.0.1
 acl url2 dstdomain -i localhost
 acl url3 dstdomain -i $ipdovps
-acl url4 dstdomain -i /StoPhVPS?
+acl url4 dstdomain -i /VPSPLUS?
 acl payload url_regex -i "$var_pay"
 acl all src 0.0.0.0/0
 
@@ -1051,7 +1051,7 @@ else
 	./easyrsa gen-dh
 	./easyrsa build-server-full server nopass
 	./easyrsa build-client-full SSHPLUS nopass
-		./easyrsa build-client-full StoPhVPS nopass
+		./easyrsa build-client-full VPSPLUS nopass
 	./easyrsa gen-crl
 	# Move the stuff we need
 	cp pki/ca.crt pki/private/ca.key pki/dh.pem pki/issued/server.crt pki/private/server.key /etc/openvpn/easy-rsa/pki/crl.pem /etc/openvpn

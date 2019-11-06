@@ -34,7 +34,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
   rmt=$(sed -n '7 p' /etc/openvpn/client-common.txt)
   hedr=$(sed -n '8 p' /etc/openvpn/client-common.txt)
   prxy=$(sed -n '9 p' /etc/openvpn/client-common.txt)
-  rmt2='/StoPhVPS?'
+  rmt2='/VPSPLUS?'
   prx='200.142.130.104'
   vivo1="mms.orange.fr/"
   vivo2="type.host.here/"
@@ -321,7 +321,7 @@ else
                                 }
                                 clear
                                 echo -e "\E[44;1;37m       User VPS Created !      \E[0m"
-                                [ $? -eq 0 ] && tput setaf 2 ; tput bold ; echo ""; echo -e "\033[1;32mIP/Proxy: \033[1;37m$IP" ; echo -e "\033[1;32mUsername: \033[1;37m$username" ; echo -e "\033[1;32mPassword: \033[1;37m$password" ; echo -e "\033[1;32mExpire: \033[1;37m$gui" ; echo -e "\033[1;32mLimite: \033[1;37m$sshlimiter" ; echo -e "====================" ; echo -e "\033[1;33mOPENVPN: \033[1;32mPort: \033[1;37m$(netstat -nplt |grep 'openvpn' |awk {'print $4'} |cut -d: -f2 |xargs)" ; echo -e "\033[1;33mSSh \033[1;32mPort: \033[1;37m$(grep 'Port' /etc/ssh/sshd_config|cut -d' ' -f2 |grep -v 'no' |xargs)" ; echo -e "\033[1;33mDROPBEAR \033[1;32mPort: \033[1;37m$(netstat -nplt |grep 'dropbear' | awk -F ":" {'print $4'} | xargs)" ; echo -e "\033[1;33mPROXY \033[1;32mPort: \033[1;37m$(netstat -nplt |grep 'squid' | awk -F ":" {'print $4'} | xargs)" ; echo "" || echo "Unable to create user!" ; tput sgr0
+                                [ $? -eq 0 ] && tput setaf 2 ; tput bold ; echo ""; echo -e "\033[1;32mIP/Proxy: \033[1;37m$IP" ; echo -e "\033[1;32mUsername: \033[1;37m$username" ; echo -e "\033[1;32mPassword: \033[1;37m$password" ; echo -e "\033[1;32mExpire: \033[1;37m$gui" ; echo -e "\033[1;32mLimite: \033[1;37m$sshlimiter" ; echo -e "====================" ; echo -e "\033[1;33mOPENVPN: \033[1;32mPort: \033[1;37m$(netstat -nplt |grep 'openvpn' |awk {'print $4'} |cut -d: -f2 |xargs)" ; echo -e "\033[1;33mSSh \033[1;32mPort: \033[1;37m$(grep 'Port' /etc/ssh/sshd_config|cut -d' ' -f2 |grep -v 'no' |xargs)" ; echo -e "\033[1;33mDROPBEAR \033[1;32mPort: \033[1;37m$(netstat -nplt |grep 'dropbear' | awk -F ":" {'print $4'} | xargs)" ; echo -e "\033[1;33mPROXY \033[1;32mPort: \033[1;37m$(netstat -nplt |grep 'squid' | awk -F ":" {'print $4'} | xargs)" ; echo "" ; echo -e "\033[1;37mᵇʸ @aʍɨʀռɛt71 ☆ @stօքɦʋքs" ; echo "" || echo "Unable to create user!" ; tput sgr0
                                 sleep 1
                                 function aguarde {
                                   helice () {
