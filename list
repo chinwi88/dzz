@@ -165,10 +165,7 @@ _arq_host="/etc/hosts"
 _host[0]="d1n212ccp6ldpw.cloudfront.net"
 _host[1]="Type.Host.Here"
 _host[2]="mms.orange.fr/"
-_host[3]="navegue.vivo.com.br/controle/"
-_host[4]="navegue.vivo.com.br/pre/"
-_host[5]="www.whatsapp.net"
-_host[6]="/StoPhVPS?"
+_host[3]="/StoPhVPS?"
 for host in ${_host[@]}; do
 	if [[ "$(grep -w "$host" $_arq_host | wc -l)" = "0" ]]; then
 		sed -i "3i\127.0.0.1 $host" $_arq_host

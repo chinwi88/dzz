@@ -38,28 +38,13 @@ if [[ -e /etc/openvpn/server.conf ]]; then
   prx='200.142.130.104'
   vivo1="mms.orange.fr/"
   vivo2="type.host.here/"
-  vivo3="navegue.vivo.com.br/pre/"
-  vivo4="navegue.vivo.com.br/controle/"
-  vivo5="www.vivo.com.br"
-  oi="d1n212ccp6ldpw.cloudfront.net"
-  bypass="net_gateway"
   cert01="/etc/openvpn/client-common.txt"
   if [[ "$hst" == "$vivo1" ]]; then
     Host="SMFranceMMS"
   elif [[ "$hst" == "$vivo2" ]]; then
     Host="Example"
-  elif [[ "$hst" == "$vivo3" ]]; then
-    Host="Portal Navegue"
-  elif [[ "$hst" == "$vivo4" ]]; then
-    Host="Nav controle"
-  elif [[ "$hst" == "$IP:$_Port" ]]; then
-    Host="Vivo MMS"
-  elif [[ "$hst" == "$oi" ]]; then
-    Host="Oi"
-  elif [[ "$hst" == "$bypass" ]]; then
-    Host="Modo Bypass"
   else
-    Host="Desconhecido"
+    Host="Other"
   fi
 fi
 fun_bar () {
@@ -90,29 +75,24 @@ tput cnorm
 }
 fun_edithost () {
   clear
-  echo -e "\E[44;1;37m          ALTERAR HOST OVPN            \E[0m"
+  echo -e "\E[44;1;37m          Adding HOST OVPN            \E[0m"
   echo ""
-  echo -e "\033[1;33mHOST EM USO\033[1;37m: \033[1;32m$Host"
+  echo -e "\033[1;33mHost used\033[1;37m: \033[1;32m$Host"
   echo ""
-  echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;33mSYMA"
-  echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;33mVIVO NAVEGUE PRE"
-  echo -e "\033[1;31m[\033[1;36m3\033[1;31m] \033[1;33mVIVO MMS \033[1;31m[\033[1;37mAPN: \033[1;32mmms.vivo.com.br\033[1;31m]"
-  echo -e "\033[1;31m[\033[1;36m4\033[1;31m] \033[1;33mHOST OI 4G \033[1;31m[\033[1;32mAlgumas Regioes\033[1;31m]"
-  echo -e "\033[1;31m[\033[1;36m5\033[1;31m] \033[1;33mMODO BYPASS \033[1;31m[\033[1;32mopen + http injector\033[1;31m]"
-  echo -e "\033[1;31m[\033[1;36m6\033[1;31m] \033[1;33mTODOS HOSTS \033[1;31m[\033[1;32m1 Ovpn de cada\033[1;31m]" 
-  echo -e "\033[1;31m[\033[1;36m7\033[1;31m] \033[1;33mEDITAR MANUALMENTE"
-  echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;33mVOLTAR"
+  echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;33mSMFranceMMS"
+  echo -e "\033[1;31m[\033[1;36m7\033[1;31m] \033[1;33mEDIT MANUAL"
+  echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;33mBACK"
   echo ""
   echo -ne "\033[1;32mQUAL HOST DESEJA ULTILIZAR \033[1;33m?\033[1;37m "; read respo
   if [[ -z "$respo" ]]; then
     echo ""
-    echo -e "\033[1;31mOpcao invalida!"
+    echo -e "\033[1;31mOption Invalid!"
     sleep 2
     fun_edithost
   fi
   if [[ "$respo" = '1' ]]; then
     echo ""
-    echo -e "\033[1;32mALTERANDO HOST!\033[0m"
+    echo -e "\033[1;32mCHANGING HOST!\033[0m"
     echo ""
     fun_althost () {
         sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
@@ -121,12 +101,12 @@ fun_edithost () {
     }
     fun_bar 'fun_althost'
     echo ""
-    echo -e "\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+    echo -e "\033[1;32mHOST SUCCESSFULLY CHANGED!\033[0m"
     fun_geraovpn
     sleep 1.5
   elif [[ "$respo" = '2' ]]; then
     echo ""
-    echo -e "\033[1;32mALTERANDO HOST!\033[0m"
+    echo -e "\033[1;32mCHANGING HOST!\033[0m"
     echo ""
     fun_althost2 () {
       sed -i "s;$rmt;remote $rmt2 $_Port;" $cert01
@@ -135,12 +115,12 @@ fun_edithost () {
     }
     fun_bar 'fun_althost2'
     echo ""
-    echo -e "\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+    echo -e "\033[1;32mHOST SUCCESSFULLY CHANGED!\033[0m"
     fun_geraovpn
     sleep 1.5
   elif [[ "$respo" = '3' ]]; then
     echo ""
-    echo -e "\033[1;32mALTERANDO HOST!\033[0m"
+    echo -e "\033[1;32mCHANGING HOST!\033[0m"
     echo ""
     fun_althost3 () {
       sed -i "s;$rmt;remote $rmt3;" $cert01
@@ -149,12 +129,12 @@ fun_edithost () {
     }
     fun_bar 'fun_althost3'
     echo ""
-    echo -e "\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+    echo -e "\033[1;32mHOST SUCCESSFULLY CHANGED!\033[0m"
     fun_geraovpn
     sleep 1.5
   elif [[ "$respo" = '4' ]]; then
     echo ""
-    echo -e "\033[1;32mALTERANDO HOST!\033[0m"
+    echo -e "\033[1;32mCHANGING HOST!\033[0m"
     echo ""
     fun_althost4 () {
       sed -i "s;$rmt;remote $oi $_Port;" $cert01
@@ -163,12 +143,12 @@ fun_edithost () {
     }
     fun_bar 'fun_althost4'
     echo ""
-    echo -e "\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+    echo -e "\033[1;32mHOST SUCCESSFULLY CHANGED!\033[0m"
     fun_geraovpn
     sleep 1.5
   elif [[ "$respo" = '5' ]]; then
     echo ""
-    echo -e "\033[1;32mALTERANDO HOST!\033[0m"
+    echo -e "\033[1;32mCHANGING HOST!\033[0m"
     echo ""
     fun_althost5 () {
       sed -i "s;$rmt;remote $IP $_Port;" $cert01
@@ -177,13 +157,13 @@ fun_edithost () {
     }
     fun_bar 'fun_althost5'
     echo ""
-    echo -e "\033[1;32mHOST ALTERADO COM SUCESSO!\033[0m"
+    echo -e "\033[1;32mHOST SUCCESSFULLY CHANGED!\033[0m"
     fun_geraovpn
     sleep 1.5
   elif [[ "$respo" = '6' ]]; then
       [[ ! -e "$HOME/$username.ovpn" ]] && fun_geraovpn
       echo ""
-      echo -e "\033[1;32mALTERANDO HOSTS!\033[0m"
+      echo -e "\033[1;32mCHANGING HOSTS!\033[0m"
       echo ""
       fun_packhost () {
         [[ ! -d "$HOME/OVPN" ]] && mkdir $HOME/OVPN 
@@ -246,7 +226,7 @@ echo -ne "\033[1;32mName الاسم:\033[1;37m "; read username
 awk -F : ' { print $1 }' /etc/passwd > /tmp/users 
 if grep -Fxq "$username" /tmp/users
 then
-  tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Este usuário já existe. tente outro nome." ; echo "" ; tput sgr0
+  tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "This user already exists. try another name." ; echo "" ; tput sgr0
   exit 1  
 else
   if (echo $username | egrep [^a-zA-Z0-9.-_] &> /dev/null)
