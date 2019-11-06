@@ -80,10 +80,10 @@ fun_edithost () {
   echo -e "\033[1;33mHost used\033[1;37m: \033[1;32m$Host"
   echo ""
   echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;33mSMFranceMMS"
-  echo -e "\033[1;31m[\033[1;36m7\033[1;31m] \033[1;33mEDIT MANUAL"
+  echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;33mEDIT MANUAL"
   echo -e "\033[1;31m[\033[1;36m0\033[1;31m] \033[1;33mBACK"
   echo ""
-  echo -ne "\033[1;32mQUAL HOST DESEJA ULTILIZAR \033[1;33m?\033[1;37m "; read respo
+  echo -ne "\033[1;32mType Option Number \033[1;33m?\033[1;37m "; read respo
   if [[ -z "$respo" ]]; then
     echo ""
     echo -e "\033[1;31mOption Invalid!"
@@ -104,7 +104,7 @@ fun_edithost () {
     echo -e "\033[1;32mHOST SUCCESSFULLY CHANGED!\033[0m"
     fun_geraovpn
     sleep 1.5
-  elif [[ "$respo" = '2' ]]; then
+  elif [[ "$respo" = '7' ]]; then
     echo ""
     echo -e "\033[1;32mCHANGING HOST!\033[0m"
     echo ""
@@ -194,7 +194,7 @@ fun_edithost () {
       echo ""
       echo -e "\033[1;32mSUCCESSFULLY CHANGED!\033[0m"
       sleep 1.5
-  elif [[ "$respo" = '7' ]]; then
+  elif [[ "$respo" = '2' ]]; then
     echo ""
     echo -e "\033[1;32mCHANGING OVPN FILE!\033[0m"
     echo ""
