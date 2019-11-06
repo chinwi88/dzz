@@ -163,7 +163,7 @@ _mdls=("addhost" "delhost" "alterarsenha" "criarusuario" "expcleaner" "mudardata
 
 _arq_host="/etc/hosts"
 _host[0]="d1n212ccp6ldpw.cloudfront.net"
-_host[1]="mms.orange.fr/"
+_host[1]="Type.Host.Here"
 _host[2]="mms.orange.fr/"
 _host[3]="navegue.vivo.com.br/controle/"
 _host[4]="navegue.vivo.com.br/pre/"
