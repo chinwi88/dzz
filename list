@@ -96,7 +96,7 @@ wget https://unprepossessing-amo.000webhostapp.com/expcleaner.sh -O /bin/expclea
 chmod +x /bin/expcleaner
 wget https://unprepossessing-amo.000webhostapp.com/mudardata.sh -O /bin/mudardata > /dev/null 2>&1
 chmod +x /bin/mudardata
-wget https://unprepossessing-amo.000webhostapp.com/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
 chmod +x /bin/criarteste
 wget https://unprepossessing-amo.000webhostapp.com/remover.sh -O /bin/remover > /dev/null 2>&1
 chmod +x /bin/remover
