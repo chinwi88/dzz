@@ -134,7 +134,7 @@ wget https://unprepossessing-amo.000webhostapp.com/detalhes.sh -O /bin/detalhes 
 chmod +x /bin/detalhes
 wget https://unprepossessing-amo.000webhostapp.com/droplimiter.sh -O /bin/droplimiter > /dev/null 2>&1
 chmod +x /bin/droplimiter
-wget https://unprepossessing-amo.000webhostapp.com/delscript.sh -O /bin/delscript > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/delscript.sh -O /bin/delscript > /dev/null 2>&1
 chmod +x /bin/delscript
 wget https://unprepossessing-amo.000webhostapp.com/botssh.sh -O /bin/botssh > /dev/null 2>&1
 chmod +x /bin/botssh
