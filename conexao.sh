@@ -16,7 +16,7 @@ ${comando[1]} > /dev/null 2>&1
 touch $HOME/fim
  ) > /dev/null 2>&1 &
  tput civis
-echo -ne "\033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+echo -ne "\033[1;33mWaiting \033[1;37m- \033[1;33m["
 while true; do
    for((i=0; i<18; i++)); do
    echo -ne "\033[1;31m#"
@@ -27,7 +27,7 @@ while true; do
    sleep 1s
    tput cuu1
    tput dl1
-   echo -ne "\033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+   echo -ne "\033[1;33mWaiting \033[1;37m- \033[1;33m["
 done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm
@@ -39,7 +39,7 @@ PT=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LIS
 for pton in `echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq`; do
     svcs=$(echo -e "$PT" | grep -w "$pton" | awk '{print $1}' | uniq)
     [[ "$porta" = "$pton" ]] && {
-    	echo -e "\n\033[1;31mPORTA \033[1;33m$porta \033[1;31mEM USO PELO \033[1;37m$svcs\033[0m"
+    	echo -e "\n\033[1;31mPort \033[1;33m$porta \033[1;31mEM USO PELO \033[1;37m$svcs\033[0m"
     	sleep 3
     	fun_conexao
     }
@@ -48,11 +48,11 @@ done
 
 inst_sqd (){
 if netstat -nltp|grep 'squid' 1>/dev/null 2>/dev/null;then
-	echo -e "\E[41;1;37m            REMOVER SQUID PROXY              \E[0m"
+	echo -e "\E[41;1;37m            REMOVE SQUID PROXY              \E[0m"
 	echo ""
-	echo -ne "\033[1;32mREALMENTE DESEJA REMOVER O SQUID \033[1;31m? \033[1;33m[s/n]:\033[1;37m "; read resp
+	echo -ne "\033[1;32mREALLY WANT TO REMOVE SQUID \033[1;31m? \033[1;33m[s/n]:\033[1;37m "; read resp
 	if [[ "$resp" = 's' ]]; then
-		echo -e "\n\033[1;32mREMOVENDO O SQUID PROXY !\033[0m"
+		echo -e "\n\033[1;32mREMOVING SQUID PROXY !\033[0m"
 		echo ""
 		rem_sqd () 
 		{
@@ -68,40 +68,40 @@ if netstat -nltp|grep 'squid' 1>/dev/null 2>/dev/null;then
 		fi
 	    }
 	    fun_bar 'rem_sqd'
-		echo -e "\n\033[1;32mSQUID REMOVIDO COM SUCESSO !\033[0m"
+		echo -e "\n\033[1;32mSQUID REMOVED SUCCESSFULLY !\033[0m"
 		sleep 3.5s
 		clear
 		fun_conexao
 	else
-		echo -e "\n\033[1;31mRetornando...\033[0m"
+		echo -e "\n\033[1;31mReturning...\033[0m"
 		sleep 3
 		clear
 		fun_conexao
 	fi
 else
 clear
-echo -e "\E[44;1;37m              INSTALADOR SQUID                \E[0m"
+echo -e "\E[44;1;37m              Installation SQUID                \E[0m"
 echo ""
 IP=$(wget -qO- ipv4.icanhazip.com)
-echo -ne "\033[1;32mPARA CONTINUAR CONFIRME SEU IP: \033[1;37m"; read -e -i $IP ipdovps
+echo -ne "\033[1;32mTO CONTINUE CONFIRM YOUR IP: \033[1;37m"; read -e -i $IP ipdovps
 if [[ -z "$ipdovps" ]];then
-echo -e "\n\033[1;31mIP invalido\033[1;32m"
+echo -e "\n\033[1;31mInvalid IP\033[1;32m"
 echo ""
-read -p "Digite seu IP: " IP
+read -p "Enter your IP: " IP
 fi
-echo -e "\n\033[1;33mQUAIS PORTAS DESEJA ULTILIZAR NO SQUID \033[1;31m?"
-echo -e "\n\033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mDEFINA AS PORTAS EM SEQUENCIA \033[1;33mEX: \033[1;37m80 8080 8799"
+echo -e "\n\033[1;33mWHAT PORTS YOU WANT TO USE IN SQUID \033[1;31m?"
+echo -e "\n\033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mUse these Ports or choose others \033[1;33mEX: \033[1;37m80 8080 8799"
 echo ""
-echo -ne "\033[1;32mINFORME AS PORTAS\033[1;37m: "; read portass
+echo -ne "\033[1;32mINFORM THE PORT\033[1;37m: "; read portass
 if [[ -z "$portass" ]]; then
-	echo -e "\n\033[1;31mPorta invalida!"
+	echo -e "\n\033[1;31mInvaid Port!"
 	sleep 3
 	fun_conexao
 fi
 for porta in $(echo -e $portass); do
 	verif_ptrs $porta
 done
-echo -e "\n\033[1;32mINSTALANDO SQUID PROXY\033[0m"
+echo -e "\n\033[1;32mINSTALLATION SQUID PROXY\033[0m"
 echo ""
 fun_bar 'apt-get update -y' 'apt-get install squid3 -y'
 sleep 1
@@ -156,85 +156,85 @@ service ssh restart
 service squid3 restart
 fi
 }
-echo -e "\n\033[1;32mCONFIGURANDO SQUID PROXY\033[0m"
+echo -e "\n\033[1;32mCONFIGURATION SQUID PROXY\033[0m"
 echo ""
 fun_bar 'sqd_conf'
-echo -e "\n\033[1;32mSQUID INSTALADO COM SUCESSO!\033[0m"
+echo -e "\n\033[1;32mSQUID SUCCESSFULLY INSTALLED!\033[0m"
 sleep 3.5s
 fun_conexao
 fi
 }
 
 addpt_sqd () {
-	echo -e "\E[44;1;37m         ADICIONAR PORTA AO SQUID         \E[0m"
-	echo -e "\n\033[1;33mPORTAS EM USO: \033[1;32m$sqdp\n"
+	echo -e "\E[44;1;37m         ADD Ports TO SQUID         \E[0m"
+	echo -e "\n\033[1;33mPorts EM USO: \033[1;32m$sqdp\n"
 	if [[ -f "/etc/squid/squid.conf" ]]; then
 		var_sqd="/etc/squid/squid.conf"
 	elif [[ -f "/etc/squid3/squid.conf" ]]; then
 		var_sqd="/etc/squid3/squid.conf"
 	else
-		echo -e "\n\033[1;31mSQUID NAO ESTA INSTALADO!\033[0m"
-		echo -e "\n\033[1;31mRetornando...\033[0m"
+		echo -e "\n\033[1;31mSQUID IS NOT INSTALLED!\033[0m"
+		echo -e "\n\033[1;31mReturning...\033[0m"
 		sleep 2
 		clear
 		fun_squid
 	fi
-	echo -ne "\033[1;32mQUAL PORTA DESEJA ADICIONAR \033[1;33m?\033[1;37m "; read pt
+	echo -ne "\033[1;32mWhich Port Do You Want to Add \033[1;33m?\033[1;37m "; read pt
 	if [[ -z "$pt" ]]; then
-		echo -e "\n\033[1;31mPorta invalida!"
+		echo -e "\n\033[1;31mInvalid Port!"
 		sleep 3
 		clear
 		fun_conexao		
 	fi
 	verif_ptrs $pt
-	echo -e "\n\033[1;32mADICIONANDO PORTA AO SQUID!"
+	echo -e "\n\033[1;32mADDING PORT TO SQUID!"
 	echo ""
 	sed -i "s/#Portas/#Portas\nhttp_port $pt/g" $var_sqd
 	fun_bar 'sleep 2'
-	echo -e "\n\033[1;32mREINICIANDO O SQUID!"
+	echo -e "\n\033[1;32mRESETTING SQUID!"
 	echo ""
 	fun_bar 'service squid restart' 'service squid3 restart'
-	echo -e "\n\033[1;32mPORTA ADICIONADA COM SUCESSO!"
+	echo -e "\n\033[1;32mSUCCESSFULLY ADDED SQUID PROXY!"
 	sleep 3
 	clear
 	fun_squid
 }
 
 rempt_sqd () {
-	echo -e "\E[41;1;37m        REMOVER PORTA DO SQUID        \E[0m"
-	echo -e "\n\033[1;33mPORTAS EM USO: \033[1;32m$sqdp\n"
+	echo -e "\E[41;1;37m        REMOVE SQUID PORT        \E[0m"
+	echo -e "\n\033[1;33mPorts EM USO: \033[1;32m$sqdp\n"
 	if [[ -f "/etc/squid/squid.conf" ]]; then
 		var_sqd="/etc/squid/squid.conf"
 	elif [[ -f "/etc/squid3/squid.conf" ]]; then
 		var_sqd="/etc/squid3/squid.conf"
 	else
-		echo -e "\n\033[1;31mSQUID NAO ESTA INSTALADO!\033[0m"
-		echo -e "\n\033[1;31mRetornando...\033[0m"
+		echo -e "\n\033[1;31mSQUID Not Installed!\033[0m"
+		echo -e "\n\033[1;31mReturning...\033[0m"
 		sleep 2
 		clear
 		fun_squid
 	fi
-	echo -ne "\033[1;32mQUAL PORTA DESEJA REMOVER \033[1;33m?\033[1;37m "; read pt
+	echo -ne "\033[1;32mWhich Ports do you want to remove? \033[1;33m?\033[1;37m "; read pt
 	if [[ -z "$pt" ]]; then
-		echo -e "\n\033[1;31mPorta invalida!"
+		echo -e "\n\033[1;31mInvalid Port!"
 		sleep 2
 		clear
 		fun_conexao
 	fi
 	if grep -E "$pt" $var_sqd > /dev/null 2>&1; then
-		echo -e "\n\033[1;32mREMOVENDO PORTA DO SQUID!"
+		echo -e "\n\033[1;32mRemove SQUID Port!"
 		echo ""
 		sed -i "/http_port $pt/d" $var_sqd
 		fun_bar 'sleep 3'
-		echo -e "\n\033[1;32mREINICIANDO O SQUID!"
+		echo -e "\n\033[1;32mRESETTING SQUID!"
 		echo ""
 		fun_bar 'service squid restart' 'service squid3 restart'
-		echo -e "\n\033[1;32mPORTA REMOVIDA COM SUCESSO!"
+		echo -e "\n\033[1;32mSQUID Proxy successfully removed!"
 		sleep 3.5s
 		clear
 		fun_squid
 	else
-		echo -e "\n\033[1;31mPORTA \033[1;32m$pt \033[1;31mNAO ENCONTRADA!"
+		echo -e "\n\033[1;31mPort \033[1;32m$pt \033[1;31mNOT FOUND!"
 		sleep 3.5s
 		clear
 		fun_squid
@@ -243,20 +243,20 @@ rempt_sqd () {
 
 fun_squid () {
 [[ "$(netstat -nplt |grep -c 'squid')" = "0" ]] && inst_sqd
-echo -e "\E[44;1;37m          GERENCIAR SQUID PROXY           \E[0m"
+echo -e "\E[44;1;37m          Manager SQUID PROXY           \E[0m"
 [[ "$(netstat -nplt |grep -c 'squid')" != "0" ]] && {
 sqdp=$(netstat -nplt |grep 'squid' | awk -F ":" {'print $4'} | xargs)
     echo -e "\n\033[1;33mPORTAS\033[1;37m: \033[1;32m$sqdp"
-    VarSqdOn="REMOVER SQUID PROXY"
+    VarSqdOn="REMOVE SQUID PROXY"
 } || {
-    VarSqdOn="INSTALAR SQUID PROXY"
+    VarSqdOn="INSTALL SQUID PROXY"
 }
 echo -e "\n\033[1;31m[\033[1;36m1\033[1;31m] \033[1;37m• \033[1;33m$VarSqdOn \033[1;31m
-[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mADICIONAR PORTA \033[1;31m
-[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mREMOVER PORTA\033[1;31m
-[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;33mVOLTAR\033[0m"
+[\033[1;36m2\033[1;31m] \033[1;37m• \033[1;33mADD Port \033[1;31m
+[\033[1;36m3\033[1;31m] \033[1;37m• \033[1;33mREMOVE Port\033[1;31m
+[\033[1;36m0\033[1;31m] \033[1;37m• \033[1;33mBACk\033[0m"
 echo ""
-echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m "; read x
+echo -ne "\033[1;32mWHAT DO YOU WANT TO DO \033[1;33m?\033[1;31m?\033[1;37m "; read x
 clear
 case $x in
 	1|01)
@@ -269,12 +269,12 @@ case $x in
 	rempt_sqd
 	;;
 	0|00)
-	echo -e "\033[1;31mRetornando...\033[0m"
+	echo -e "\033[1;31mReturning...\033[0m"
 	sleep 1
 	fun_conexao
 	;;
 	*)
-	echo -e "\033[1;31mOpcao Invalida...\033[0m"
+	echo -e "\033[1;31mInvalid Option...\033[0m"
 	sleep 2
 	fun_conexao
 	;;
@@ -354,7 +354,7 @@ fun_drop () {
 			clear
 			fun_conexao
 		elif [[ "$resposta" = '0' ]]; then
-			echo -e "\n\033[1;31mRetornando...\033[0m"
+			echo -e "\n\033[1;31mReturning...\033[0m"
 			sleep 2
 			fun_conexao
 		else
@@ -415,7 +415,7 @@ fun_drop () {
 			fun_conexao
 		else
 			echo""
-			echo -e "\033[1;31mRetornando...\033[0m"
+			echo -e "\033[1;31mReturning...\033[0m"
 			sleep 3
 			clear
 			fun_conexao
@@ -478,7 +478,7 @@ if netstat -nltp|grep 'stunnel4' 1>/dev/null 2>/dev/null;then
 		sleep 3
 		fun_conexao
 	else
-		echo -e "\033[1;31mRetornando...\033[0m"
+		echo -e "\033[1;31mReturning...\033[0m"
 		sleep 3
 		fun_conexao
 	fi
@@ -533,7 +533,7 @@ else
     clear
     fun_conexao
     else
-    echo -e "\n\033[1;31mRetornando...\033[0m"
+    echo -e "\n\033[1;31mReturning...\033[0m"
     sleep 3
     clear
     fun_conexao
@@ -719,7 +719,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 				fun_conexao
 			else
 				echo ""
-				echo -e "\033[1;31mRetornando...\033[0m"
+				echo -e "\033[1;31mReturning...\033[0m"
 				sleep 2
 				fun_conexao
 			fi
@@ -941,7 +941,7 @@ if [[ -e /etc/openvpn/server.conf ]]; then
 			    fun_openvpn
 			elif [[ "$resp" = '0' ]]; then
 				echo ""
-				echo -e "\033[1;31mRetornando...\033[0m"
+				echo -e "\033[1;31mReturning...\033[0m"
 				sleep 2
 				fun_conexao
 			else
@@ -1443,7 +1443,7 @@ fun_socks () {
 		fi
 	elif [[ "$resposta" = '0' ]]; then
 		echo ""
-		echo -e "\033[1;31mRetornando...\033[0m"
+		echo -e "\033[1;31mReturning...\033[0m"
 		sleep 2
 		fun_conexao
 	else
@@ -1511,7 +1511,7 @@ fun_openssh () {
 			fun_conexao
 		}
 	elif [[ "$resp" = '3' ]]; then
-		echo -e "\n\033[1;31mRetornando.."
+		echo -e "\n\033[1;31mReturning.."
 		sleep 3
 		fun_conexao
 	else
@@ -1544,7 +1544,7 @@ fun_sslh () {
         sleep 3
         fun_conexao
      else
-         echo -e "\n\033[1;31mRetornando.."
+         echo -e "\n\033[1;31mReturning.."
          sleep 2
          fun_conexao
      fi
@@ -1564,7 +1564,7 @@ fun_sslh () {
 	    sleep 2
 	    fun_conexao
     else
-	     echo -e "\n\033[1;31mRetornando.."
+	     echo -e "\n\033[1;31mReturning.."
          sleep 2
          fun_conexao
     fi
