@@ -36,8 +36,8 @@ if [[ -e /etc/openvpn/server.conf ]]; then
   prxy=$(sed -n '9 p' /etc/openvpn/client-common.txt)
   rmt2='/StoPhVPS?'
   prx='200.142.130.104'
-  vivo1="Host.Here"
-  vivo2="mms.orange.fr/"
+  vivo1="mms.orange.fr/"
+  vivo2="type.host.here"
   vivo3="navegue.vivo.com.br/pre/"
   vivo4="navegue.vivo.com.br/controle/"
   vivo5="www.vivo.com.br"
@@ -45,9 +45,9 @@ if [[ -e /etc/openvpn/server.conf ]]; then
   bypass="net_gateway"
   cert01="/etc/openvpn/client-common.txt"
   if [[ "$hst" == "$vivo1" ]]; then
-    Host="Example"
+    Host="SMFranceMMS"
   elif [[ "$hst" == "$vivo2" ]]; then
-    Host="SYMAMMS"
+    Host="Example"
   elif [[ "$hst" == "$vivo3" ]]; then
     Host="Portal Navegue"
   elif [[ "$hst" == "$vivo4" ]]; then
