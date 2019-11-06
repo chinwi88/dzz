@@ -72,7 +72,7 @@ echo ""
 echo -e "\033[1;33mAfter the user defined time"
 echo -e "\033[1;32m$nome \033[1;33mwill be disconnected and deleted.\033[0m"
 echo ""
-echo -e "\033[1;37mᵇʸ @aʍɨʀռɛt71 ☆ @stօքɦʋքs"
+echo -e "\033[1;37mᵇʸ @aʍɨʀռɛt71 ☆ @sᴛᴏᴘʜᴠᴘs"
 exit
 
 
