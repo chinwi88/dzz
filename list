@@ -118,13 +118,13 @@ wget https://raw.githubusercontent.com/chinwi88/dzz/master/menu.sh -O /bin/menu 
 chmod +x /bin/menu
 wget https://unprepossessing-amo.000webhostapp.com/speedtest.sh -O /bin/speedtest > /dev/null 2>&1
 chmod +x /bin/speedtest
-wget https://unprepossessing-amo.000webhostapp.com/banner.sh -O /bin/banner > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/banner.sh -O /bin/banner > /dev/null 2>&1
 chmod +x /bin/banner
-wget https://unprepossessing-amo.000webhostapp.com/senharoot.sh -O /bin/senharoot > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/senharoot.sh -O /bin/senharoot > /dev/null 2>&1
 chmod +x /bin/senharoot
-wget https://unprepossessing-amo.000webhostapp.com/reiniciarservicos.sh -O /bin/reiniciarservicos > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/reiniciarservicos.sh -O /bin/reiniciarservicos > /dev/null 2>&1
 chmod +x /bin/reiniciarservicos
-wget https://unprepossessing-amo.000webhostapp.com/reiniciarsistema.sh -O /bin/reiniciarsistema > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/reiniciarsistema.sh -O /bin/reiniciarsistema > /dev/null 2>&1
 chmod +x /bin/reiniciarsistema
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/attscript.sh -O /bin/attscript > /dev/null 2>&1
 chmod +x /bin/attscript
