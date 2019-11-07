@@ -57,7 +57,7 @@ echo -e "\033[1;31m• \033[1;32mMEMORY RAM\033[1;31m •\033[0m"
 echo ""
 echo -e "\033[1;33mTotal: \033[1;37m$ram1"
 echo -e "\033[1;33mUsed: \033[1;37m$ram3"
-echo -e "\033[1;33mDelivered: \033[1;37m$ram2"
+echo -e "\033[1;33mFree: \033[1;37m$ram2"
 echo -e "\033[1;33multis: \033[37m$usoram"
 echo ""
 else
