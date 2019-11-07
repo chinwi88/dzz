@@ -112,7 +112,7 @@ wget https://unprepossessing-amo.000webhostapp.com/userbackup.sh -O /bin/userbac
 chmod +x /bin/userbackup
 wget https://unprepossessing-amo.000webhostapp.com/blockt.sh -O /bin/blockt > /dev/null 2>&1
 chmod +x /bin/blockt
-wget https://unprepossessing-amo.000webhostapp.com/otimizar.sh -O /bin/otimizar > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/otimizar.sh -O /bin/otimizar > /dev/null 2>&1
 chmod +x /bin/otimizar
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/menu.sh -O /bin/menu > /dev/null 2>&1
 chmod +x /bin/menu
