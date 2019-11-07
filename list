@@ -126,7 +126,7 @@ wget https://unprepossessing-amo.000webhostapp.com/reiniciarservicos.sh -O /bin/
 chmod +x /bin/reiniciarservicos
 wget https://unprepossessing-amo.000webhostapp.com/reiniciarsistema.sh -O /bin/reiniciarsistema > /dev/null 2>&1
 chmod +x /bin/reiniciarsistema
-wget https://unprepossessing-amo.000webhostapp.com/attscript.sh -O /bin/attscript > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/attscript.sh -O /bin/attscript > /dev/null 2>&1
 chmod +x /bin/attscript
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/conexao.sh -O /bin/conexao > /dev/null 2>&1
 chmod +x /bin/conexao
