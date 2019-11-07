@@ -34,7 +34,7 @@ fun_atts () {
 	[[ -f "/home/versao" ]] && mv /home/versao /tmp/att
 	[[ ! -e /bin/versao ]] && rm -rf /bin/menu
 } > /dev/null 2>&1
-echo -e "                              \033[1;31mBy Crazy\033[1;36m"
+echo -e "                              \033[1;31mBy Mostafa & Amir\033[1;36m"
 echo -e "   VPSPlus" | figlet
 echo " "
 echo -e "   \033[1;32mCHECKING AVAILABLE UPDATES\033[0m\n"

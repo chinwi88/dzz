@@ -996,7 +996,7 @@ else
 	echo -e "\033[1;31m[\033[1;36m6\033[1;31m] \033[1;33mVerisign"
 	echo -e "\033[1;31m[\033[1;36m7\033[1;31m] \033[1;33mDNS Performace\033[0m"
 	echo ""
-	read -p "$(echo -e "\033[1;32mQUAL DNS DESEJA UTILIZAR? \033[1;37m")" -e -i 2 DNS
+	read -p "$(echo -e "\033[1;32mWhat DNS You Want? \033[1;37m")" -e -i 2 DNS
 	echo ""
 	echo -e "\033[1;31m[\033[1;36m1\033[1;31m] \033[1;33mUDP"
 	echo -e "\033[1;31m[\033[1;36m2\033[1;31m] \033[1;33mTCP (\033[1;32mRecommended\033[1;33m)"
