@@ -130,9 +130,9 @@ wget https://raw.githubusercontent.com/chinwi88/dzz/master/attscript.sh -O /bin/
 chmod +x /bin/attscript
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/conexao.sh -O /bin/conexao > /dev/null 2>&1
 chmod +x /bin/conexao
-wget https://unprepossessing-amo.000webhostapp.com/detalhes.sh -O /bin/detalhes > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/detalhes.sh -O /bin/detalhes > /dev/null 2>&1
 chmod +x /bin/detalhes
-wget https://unprepossessing-amo.000webhostapp.com/droplimiter.sh -O /bin/droplimiter > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/droplimiter.sh -O /bin/droplimiter > /dev/null 2>&1
 chmod +x /bin/droplimiter
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/delscript.sh -O /bin/delscript > /dev/null 2>&1
 chmod +x /bin/delscript
