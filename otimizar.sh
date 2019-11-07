@@ -117,7 +117,7 @@ swap3=$(free -h | grep -i swap | awk {'print $3'})
 
 echo -e "\033[1;31m•\033[1;32mMemory RAM\033[1;31m•\033[0m                    \033[1;31m•\033[1;32mSwap\033[1;31m•\033[0m"
 echo -e " \033[1;33mTotal: \033[1;37m$ram1                   \033[1;33mTotal: \033[1;37m$swap1"
-echo -e " \033[1;33mUsed: \033[1;37m$ram3                  \033[1;33Used: \033[1;37m$swap3"
+echo -e " \033[1;33mUsed: \033[1;37m$ram3                  \033[1;33mUsed: \033[1;37m$swap3"
 echo -e " \033[1;33mFree: \033[1;37m$ram2                   \033[1;33mFree: \033[1;37m$swap2\033[0m"
 echo ""
 echo -e "\033[1;37mMemory \033[1;32mRAM \033[1;37mafter optimization:\033[1;36m" $MEM2% 
