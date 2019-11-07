@@ -81,7 +81,7 @@ rm -rf $HOME/speed
 #limiter
 function limit1 () {
    clear
-   echo -e "\n\033[1;32mINICIANDO O LIMITER... \033[0m"
+   echo -e "\n\033[1;32mSTARTING THE LIMITER... \033[0m"
    echo ""
    fun_bar 'screen -dmS limiter limiter' 'sleep 3'
    [[ $(grep -wc "limiter" /etc/autostart) = '0' ]] && {
@@ -90,13 +90,13 @@ function limit1 () {
        sed -i '/limiter/d' /etc/autostart
 	   echo -e "ps x | grep 'limiter' | grep -v 'grep' && echo 'ON' || screen -dmS limiter limiter" >> /etc/autostart
    }
-   echo -e "\n\033[1;32m  LIMITER ATIVO !\033[0m"
+   echo -e "\n\033[1;32m  ACTIVE LIMITER !\033[0m"
    sleep 3
    menu
 }
 function limit2 () {
    clear
-   echo -e "\033[1;32mPARANDO O LIMITER... \033[0m"
+   echo -e "\033[1;32mSTOPPING THE LIMITER... \033[0m"
    echo ""
    fun_stplimiter () {
       sleep 1
@@ -108,7 +108,7 @@ function limit2 () {
       sleep 1
    }
    fun_bar 'fun_stplimiter' 'sleep 3'
-   echo -e "\n\033[1;31m LIMITER PARADO !\033[0m"
+   echo -e "\n\033[1;31m LIMITER STOPPED !\033[0m"
    sleep 3
    menu
 }
@@ -119,19 +119,19 @@ function limit_ssh () {
 function autoexec () {
    if grep "menu;" /etc/profile > /dev/null; then
       clear
-      echo -e "\033[1;32mDESATIVANDO AUTO EXECUÇÃO\033[0m"
+      echo -e "\033[1;32mDISABLING AUTO EXECUTION\033[0m"
       offautmenu () {
          sed -i '/menu;/d' /etc/profile
       }
       echo ""
       fun_bar 'offautmenu'
       echo ""
-      echo -e "\033[1;31mAUTO EXECUÇÃO DESATIVADO!\033[0m"
+      echo -e "\033[1;31mAUTO EXECUTION OFF!\033[0m"
       sleep 1.5s
       menu2
    else
       clear
-      echo -e "\033[1;32mATIVANDO AUTO EXECUÇÃO\033[0m"
+      echo -e "\033[1;32mENABLING AUTO EXECUTION\033[0m"
       autmenu () {
          grep -v "^menu;" /etc/profile > /tmp/tmpass && mv /tmp/tmpass /etc/profile
          echo "menu;" >> /etc/profile
@@ -139,7 +139,7 @@ function autoexec () {
       echo ""
       fun_bar 'autmenu'
       echo ""
-      echo -e "\033[1;32mAUTO EXECUÇÃO ATIVADO!\033[0m"
+      echo -e "\033[1;32mAUTO EXECUTION ON!\033[0m"
       sleep 1.5s
       menu2
    fi
@@ -182,7 +182,7 @@ echo -e "\E[41;1;37m  ⇱ VPSPLUS MANAGER ⇲     ᵇʸ @aʍɨʀռɛt71☆@sᴛ�
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\033[1;32mSystem            Ram Memory      PROCESSOR "
 echo -e "\033[1;31mOS: \033[1;37m$_system \033[1;31mTotal:\033[1;37m$_ram \033[1;31mCore: \033[1;37m$_core\033[0m"
-echo -e "\033[1;31mHour: \033[1;37m$_hora     \033[1;31mEm uso: \033[1;37m$_usor \033[1;31mEm uso: \033[1;37m$_usop\033[0m"
+echo -e "\033[1;31mHour: \033[1;37m$_hora     \033[1;31m  Used: \033[1;37m$_usor \033[1;31m  Used: \033[1;37m$_usop\033[0m"
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 [[ ! -e /tmp/att ]]  && {
     echo -e "\033[1;32mOnlines:\033[1;37m $_onlin     \033[1;31mExpires: \033[1;37m$_userexp \033[1;33mTotal: \033[1;37m$_tuser\033[0m"
@@ -193,27 +193,27 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━�
 }
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo -e "\033[1;31m[\033[1;36m20\033[1;31m] \033[1;37m• \033[1;33mADICIONAR HOST \033[1;31m     [\033[1;36m26\033[1;31m] \033[1;37m• \033[1;33mMUDAR SENHA ROOT \033[1;31m
-[\033[1;36m21\033[1;31m] \033[1;37m• \033[1;33mREMOVER HOST \033[1;31m       [\033[1;36m27\033[1;31m] \033[1;37m• \033[1;33mAUTO EXECUCAO $autm \033[1;31m
-[\033[1;36m22\033[1;31m] \033[1;37m• \033[1;33mREINICIAR SISTEMA \033[1;31m  [\033[1;36m28\033[1;31m] $var01 \033[1;33mATUALIZAR SCRIPT \033[1;31m
-[\033[1;36m23\033[1;31m] \033[1;37m• \033[1;33mREINICIAR SERVICOS \033[1;31m [\033[1;36m29\033[1;31m] \033[1;37m• \033[1;33mREMOVER SCRIPT \033[1;31m
-[\033[1;36m24\033[1;31m] \033[1;37m• \033[1;33mBLOCK TORRENT $stsf\033[1;31m    [\033[1;36m30\033[1;31m] \033[1;37m• \033[1;33mVOLTAR \033[1;32m<\033[1;33m<\033[1;31m< \033[1;31m
-[\033[1;36m25\033[1;31m] \033[1;37m• \033[1;33mBOT TELEGRAM $stsbot\033[1;31m     [\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mSAIR \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m"
+echo -e "\033[1;31m[\033[1;36m20\033[1;31m] \033[1;37m• \033[1;33m      ADD HOST \033[1;31m    [\033[1;36m26\033[1;31m] \033[1;37m• \033[1;33mEDIT ROOT PASSWORD \033[1;31m
+[\033[1;36m21\033[1;31m] \033[1;37m• \033[1;33m REMOVE HOST \033[1;31m      [\033[1;36m27\033[1;31m] \033[1;37m• \033[1;33mAUTO EXECUTION $autm \033[1;31m
+[\033[1;36m22\033[1;31m] \033[1;37m• \033[1;33m      RESTART VPS \033[1;31m  [\033[1;36m28\033[1;31m] $var01 \033[1;33m   UPDATE SCRIPT \033[1;31m
+[\033[1;36m23\033[1;31m] \033[1;37m• \033[1;33m  RESTART SERVICES \033[1;31m [\033[1;36m29\033[1;31m] \033[1;37m• \033[1;33m REMOVE SCRIPT \033[1;31m
+[\033[1;36m24\033[1;31m] \033[1;37m• \033[1;33mBLOCK TORRENT $stsf\033[1;31m    [\033[1;36m30\033[1;31m] \033[1;37m• \033[1;33m   EXIT \033[1;32m<\033[1;33m<\033[1;31m< \033[1;31m
+[\033[1;36m25\033[1;31m] \033[1;37m• \033[1;33mBOT TELEGRAM $stsbot\033[1;31m     [\033[1;36m00\033[1;31m] \033[1;37m• \033[1;33mBACK \033[1;32m<\033[1;33m<\033[1;31m<\033[1;31m"
 echo ""
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo ""
-echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;33m?\033[1;31m?\033[1;37m : "; read x
+echo -ne "\033[1;32mType The Number Option \033[1;33m?\033[1;31m?\033[1;37m : "; read x
 case "$x" in
    20)
    clear
    addhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mto return to \033[1;32mMENU!\033[0m"; read
    menu2
    ;;
    21)
    clear
    delhost
-   echo -ne "\n\033[1;31mENTER \033[1;33mpara retornar ao \033[1;32mMENU!\033[0m"; read
+   echo -ne "\n\033[1;31mENTER \033[1;33mto return to \033[1;32mMENU!\033[0m"; read
    menu2
    ;;
    22)
@@ -250,13 +250,13 @@ case "$x" in
    menu
    ;;
    0|00)
-   echo -e "\033[1;31mSaindo...\033[0m"
+   echo -e "\033[1;31mClosing...\033[0m"
    sleep 2
    clear
    exit;
    ;;
    *)
-   echo -e "\n\033[1;31mOpcao invalida !\033[0m"
+   echo -e "\n\033[1;31mInvalid Option !\033[0m"
    sleep 2
 esac
 }
