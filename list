@@ -98,19 +98,19 @@ wget https://unprepossessing-amo.000webhostapp.com/mudardata.sh -O /bin/mudardat
 chmod +x /bin/mudardata
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/criarteste.sh -O /bin/criarteste > /dev/null 2>&1
 chmod +x /bin/criarteste
-wget https://unprepossessing-amo.000webhostapp.com/remover.sh -O /bin/remover > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/remover.sh -O /bin/remover > /dev/null 2>&1
 chmod +x /bin/remover
-wget https://unprepossessing-amo.000webhostapp.com/alterarlimite.sh -O /bin/alterarlimite > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/alterarlimite.sh -O /bin/alterarlimite > /dev/null 2>&1
 chmod +x /bin/alterarlimite
-wget https://unprepossessing-amo.000webhostapp.com/ajuda.sh -O /bin/ajuda > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/ajuda.sh -O /bin/ajuda > /dev/null 2>&1
 chmod +x /bin/ajuda
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/sshmonitor.sh -O /bin/sshmonitor > /dev/null 2>&1
 chmod +x /bin/sshmonitor
-wget https://unprepossessing-amo.000webhostapp.com/badvpn.sh -O /bin/badvpn > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/badvpn.sh -O /bin/badvpn > /dev/null 2>&1
 chmod +x /bin/badvpn
-wget https://unprepossessing-amo.000webhostapp.com/userbackup.sh -O /bin/userbackup > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/userbackup.sh -O /bin/userbackup > /dev/null 2>&1
 chmod +x /bin/userbackup
-wget https://unprepossessing-amo.000webhostapp.com/blockt.sh -O /bin/blockt > /dev/null 2>&1
+wget https://raw.githubusercontent.com/chinwi88/dzz/master/blockt.sh -O /bin/blockt > /dev/null 2>&1
 chmod +x /bin/blockt
 wget https://raw.githubusercontent.com/chinwi88/dzz/master/otimizar.sh -O /bin/otimizar > /dev/null 2>&1
 chmod +x /bin/otimizar
